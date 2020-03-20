@@ -1,0 +1,206 @@
+[21-Oct-2019 05:47:14 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 05:47:32 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 05:51:02 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 05:52:35 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 05:53:38 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 05:54:52 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:04:11 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:06:44 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:29:18 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:30:43 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:31:46 UTC] PHP Fatal error:  Call to a member function get() on null in /home/k8013166/public_html/katalog_baru/application/controllers/Home.php on line 20
+[21-Oct-2019 06:31:58 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:35:51 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:38:28 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:39:47 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:40:43 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:40:52 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:41:29 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:42:27 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:42:54 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:43:09 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 21
+[21-Oct-2019 06:46:21 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting function (T_FUNCTION) in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 8
+[21-Oct-2019 06:47:53 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting function (T_FUNCTION) in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 8
+[21-Oct-2019 06:47:57 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting function (T_FUNCTION) in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 8
+[21-Oct-2019 06:50:12 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting function (T_FUNCTION) in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 8
+[21-Oct-2019 06:52:30 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting function (T_FUNCTION) in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 8
+[21-Oct-2019 07:17:02 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:17:03 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:17:03 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:17:03 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:18:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:18:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:18:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:18:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:22:29 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:22:30 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:22:30 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:22:30 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:45:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:45:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:45:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:45:14 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 65
+[21-Oct-2019 07:48:47 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:48:47 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:48:47 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:48:47 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:51:12 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:51:12 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:51:12 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:51:12 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:58:15 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:58:15 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:58:15 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:58:15 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:59:38 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:59:38 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:59:38 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 07:59:38 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:21:14 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:21:14 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:21:14 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:21:14 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:27:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:27:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:27:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:27:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:28:52 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:28:52 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:28:52 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:28:52 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:30:19 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:30:19 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:30:19 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:30:19 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:32:55 UTC] PHP Fatal error:  Call to undefined method M_barang_model::jumlah_produk() in /home/k8013166/public_html/katalog_baru/application/controllers/Dashboard.php on line 26
+[21-Oct-2019 08:32:58 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:32:58 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:32:58 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:32:58 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:33:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:33:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:33:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 08:33:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:03:30 UTC] PHP Fatal error:  Call to a member function result_array() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 182
+[21-Oct-2019 09:05:21 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:05:22 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:05:22 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:05:22 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:06:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:06:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:06:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:06:29 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:12:46 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:12:46 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:12:46 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:12:46 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:13:59 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 38
+[21-Oct-2019 09:13:59 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 38
+[21-Oct-2019 09:13:59 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 38
+[21-Oct-2019 09:13:59 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 38
+[21-Oct-2019 09:16:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:16:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:16:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:16:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:17:23 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:17:23 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:17:23 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:17:23 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:18:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:18:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:18:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:18:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:19:10 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:19:10 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:19:10 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:19:11 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:19:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:19:44 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:19:49 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:06 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:06 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:06 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:06 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:21 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:21 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:21 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:22:21 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:28:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:28:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:28:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:28:30 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:29:16 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:29:52 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 09:37:47 UTC] PHP Fatal error:  Call to undefined function decode_date() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 84
+[21-Oct-2019 19:17:56 UTC] PHP Fatal error:  Call to a member function query() on boolean in /home/k8013166/public_html/katalog_baru/system/database/drivers/mysqli/mysqli_driver.php on line 264
+[21-Oct-2019 20:24:44 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 20:24:58 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 20:25:00 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 20:25:07 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 20:27:40 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 20:36:12 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 21:48:52 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 21:48:56 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 21:49:11 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 21:50:57 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 22:05:25 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 22:08:04 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 22:10:42 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 22:15:35 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[21-Oct-2019 22:17:27 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 02:44:02 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 02:44:04 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:23:22 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:23:35 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:24:37 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:28:57 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:35:40 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:56:02 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:56:11 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 03:58:38 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 118
+[22-Oct-2019 04:06:49 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 119
+[22-Oct-2019 04:08:00 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 119
+[22-Oct-2019 04:15:10 UTC] PHP Fatal error:  Call to undefined function encode_date() in /home/k8013166/public_html/katalog_baru/application/controllers/master/Barang.php on line 119
+[22-Oct-2019 04:38:27 UTC] PHP Fatal error:  Call to undefined function console_log_data() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 159
+[22-Oct-2019 07:44:36 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 66
+[22-Oct-2019 07:46:18 UTC] PHP Fatal error:  Call to a member function result() on boolean in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 66
+[22-Oct-2019 07:59:59 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 140
+[22-Oct-2019 08:00:03 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 140
+[22-Oct-2019 08:00:14 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 138
+[22-Oct-2019 08:00:14 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 138
+[22-Oct-2019 08:19:08 UTC] PHP Fatal error:  Call to undefined function console_log() in /home/k8013166/public_html/katalog_baru/application/core/MY_Controller.php on line 137
+[22-Oct-2019 08:30:59 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 08:31:02 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 08:31:50 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 08:31:53 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 08:31:54 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 08:31:55 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 09:39:05 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 09:39:40 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 09:40:19 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 09:42:49 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[22-Oct-2019 09:43:03 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:31:58 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:43:06 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:43:19 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:43:22 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:45:15 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:45:21 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:45:27 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:56:07 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:57:13 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:57:24 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[23-Oct-2019 01:57:33 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog_baru/application/core/MY_Model.php on line 70
+[04-Nov-2019 01:58:23 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 01:58:40 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 01:58:49 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 01:58:53 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:02:32 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:03:29 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:03:32 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:04:01 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:04:18 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:29:07 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:31:06 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:31:23 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
+[04-Nov-2019 02:31:31 UTC] PHP Fatal error:  Cannot access protected property CI_DB_mysqli_driver::$_protect_identifiers in /home/k8013166/public_html/katalog/application/core/MY_Model.php on line 70
