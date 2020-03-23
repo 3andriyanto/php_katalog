@@ -22,10 +22,10 @@ class Hak_akses extends MY_Controller {
             "nama_user" => array("TIPE" => "STRING", "LABEL" => "Nama User"),
             "kode_transaksi" => array("TIPE" => "STRING", "LABEL" => "Kode Transaksi"),
             "nama_transaksi" => array("TIPE" => "STRING", "LABEL" => "Nama Transaksi"),
-            "tambah" => array("TIPE" => "BOOLEAN", "LABEL" => "Tambah"),
-            "ubah" => array("TIPE" => "BOOLEAN", "LABEL" => "Ubah"),
-            "hapus" => array("TIPE" => "BOOLEAN", "LABEL" => "Hapus"),
-            "lihat" => array("TIPE" => "BOOLEAN", "LABEL" => "Lihat")
+            "tambah" => array("TIPE" => "BOOLEAN", "LABEL" => "Tambah", "CUSTOM"=>TRUE),
+            "ubah" => array("TIPE" => "BOOLEAN", "LABEL" => "Ubah", "CUSTOM"=>TRUE),
+            "hapus" => array("TIPE" => "BOOLEAN", "LABEL" => "Hapus", "CUSTOM"=>TRUE),
+            "lihat" => array("TIPE" => "BOOLEAN", "LABEL" => "Lihat", "CUSTOM"=>TRUE)
         );
 
         $this->model->fieldsView = $this->fields;

@@ -133,6 +133,7 @@
                               <li><a href="javascript:void(0)" onclick="showContent('barang')"><i class="glyphicon glyphicon-th-large"></i> Barang</a></li>
                               <li><a href="javascript:void(0)" onclick="showContent('kategori')"><i class="glyphicon glyphicon-th-list"></i> Kategori Barang</a></li>
                               <li><a href="javascript:void(0)" onclick="showContent('merek')"><i class="glyphicon glyphicon-registration-mark"></i> Merek Barang</a></li>
+                              <li><a href="javascript:void(0)" onclick="showContent('customer')"><i class="glyphicon glyphicon-user"></i> Customer</a></li>
                               <hr>
                               <li><a href="javascript:void(0)" onclick="showContent('distributor')"><i class="glyphicon glyphicon-map-marker"></i> Sales & Distributor</a></li>
                               <hr>

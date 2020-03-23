@@ -1,4 +1,3 @@
-
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
@@ -6,7 +5,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-files-o"></i> Home</a></li>
-        <li class="active">Hak Akses</li>
+        <li class="active">Customer</li>
     </ol>
 </section>
 
@@ -16,21 +15,20 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Hak Akses</h3>
+                    <h3 class="box-title">Customer</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <button class="btn btn-sm btn-success" onclick="tambah()" style="margin-bottom: 10px;"><i class="glyphicon glyphicon-plus"></i> Tambah</button>
-                    <table id="table_hak_akses" class="display responsive nowrap table table-striped table-bordered" cellspacing="0" width="100%">
+                    <table id="table_customer" class="display responsive nowrap table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Action</th>
-                                <th>User</th>
-                                <th>Kode Transaksi</th>
-                                <th>Nama Transaksi</th>
-                                <th>Tambah</th>
-                                <th>Ubah</th>
-                                <th>Hapus</th>
-                                <th>Lihat</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>Telepon</th>
+                                <th>Kontak Person</th>
+                                <th>Email</th>
+                                <th>Aktif</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,48 +45,46 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h3 class="modal-title">Hak Akses Form</h3>
+                    <h3 class="modal-title">Customer Form</h3>
                 </div>
                 <div class="modal-body form">
                     <form action="#" id="form" class="form-horizontal">
-                        <input type="hidden" value="" name="id_hak_akses"/> 
+                        <input type="hidden" value="" name="id_customer"/> 
                         <div class="form-body">
                             <div class="form-group">
-                                <label class="control-label col-md-3">Nama User</label>
+                                <label class="control-label col-md-3">Nama</label>
                                 <div class="col-md-9">
-                                    <select id="user" name="user" class="form-control selectpicker" data-live-search="true" data-container="#modal_form">
-                                    </select>
+                                    <input name="nama_customer" placeholder="Nama Customer" class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3">Transaksi</label>
+                                <label class="control-label col-md-3">Alamat</label>
                                 <div class="col-md-9">
-                                    <select id="transaksi" name="transaksi" class="form-control selectpicker" data-live-search="true" data-container="#modal_form">
-                                    </select>
+                                    <input name="alamat" placeholder="Alamat" class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-3">Tambah</label>
-                                <div class="col-sm-9">
-                                    <input id="tambah" name="tambah" type="checkbox" data-toggle="toggle" data-on="Ya" data-off="Tidak" data-onstyle="success" data-offstyle="danger" data-size="small">
+                                <label class="control-label col-md-3">No Telepon</label>
+                                <div class="col-md-9">
+                                    <input name="telepon" placeholder="Telepon" class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-3">Ubah</label>
-                                <div class="col-sm-9">
-                                    <input id="ubah" name="ubah" type="checkbox" data-toggle="toggle" data-on="Ya" data-off="Tidak" data-onstyle="success" data-offstyle="danger" data-size="small">
+                                <label class="control-label col-md-3">Kontak Person</label>
+                                <div class="col-md-9">
+                                    <input name="kontak_person" placeholder="Kontak Person" class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-3">Hapus</label>
-                                <div class="col-sm-9">
-                                    <input id="hapus" name="hapus" type="checkbox" data-toggle="toggle" data-on="Ya" data-off="Tidak" data-onstyle="success" data-offstyle="danger" data-size="small">
+                                <label class="control-label col-md-3">Email</label>
+                                <div class="col-md-9">
+                                    <input name="email" placeholder="Email" class="form-control" type="text">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-3">Lihat</label>
+                            <div id="aktif-group" class="form-group">
+                                <label class="control-label col-sm-3">Aktif</label>
                                 <div class="col-sm-9">
-                                    <input id="lihat" name="lihat" type="checkbox" data-toggle="toggle" data-on="Ya" data-off="Tidak" data-onstyle="success" data-offstyle="danger" data-size="small">
+                                    <input id="aktif" name="aktif" type="checkbox" data-toggle="toggle" data-on="Ya" data-off="Tidak" data-onstyle="success" data-offstyle="danger" data-size="small">
                                 </div>
                             </div>
                         </div>
@@ -106,34 +102,26 @@
 </section>
 
 <script>
+    
     var save_method;
-    var table_hak_akses;
+    var table_customer;
 
     $(document).ready(function () {
         
-        $('#tambah').bootstrapToggle();
-        $('#ubah').bootstrapToggle();
-        $('#hapus').bootstrapToggle();
-        $('#lihat').bootstrapToggle();
-        
-        table_hak_akses = $('#table_hak_akses').DataTable({
+        $('#aktif').bootstrapToggle();
+                
+        table_customer = $('#table_customer').DataTable({
             processing: true,
             serverSide: true,
             responsive: true,
             ajax: {
-                url: "{base_url}master/hak_akses/ajax_list",
+                url: "{base_url}master/customer/ajax_list",
                 type: "POST"
             },
             columnDefs: [
                 {
                     targets: [-1],
                     orderable: false
-                },
-                {
-                    targets: 7,
-                    render: function (data, type, full, meta) {
-                        return data;
-                    }
                 },
                 {width: "50px", targets: 0}
             ],
@@ -142,54 +130,45 @@
                 {"sClass": "left"},
                 {"sClass": "left"},
                 {"sClass": "left"},
-                {"sClass": "center"},
-                {"sClass": "center"},
-                {"sClass": "center"},
+                {"sClass": "left"},
+                {"sClass": "left"},
                 {"sClass": "center"}
             ]
         });
-        
-        $('.selectpicker').selectpicker({size: 10});
-        select_user('{base_url}', '#user');
-        select_transaksi('{base_url}', '#transaksi');
-       
     });
     
     function reload_table() {
-        table_hak_akses.ajax.reload(null, false);
+        table_customer.ajax.reload(null, false);
     }
-    
+
     function tambah() {
         save_method = 'add';
         $('#form')[0].reset();
-        $("input[name='id_hak_akses']").val('');
-        $('#tambah').bootstrapToggle('on');
-        $('#ubah').bootstrapToggle('on');
-        $('#hapus').bootstrapToggle('on');
-        $('#lihat').bootstrapToggle('on');
+        $("input[name='id_customer']").val('');
+        $('#aktif').bootstrapToggle('on');
         $('#modal_form').modal('show');
-        $('.modal-title').text('Tambah Hak Akses');
+        $('.modal-title').text('Tambah Customer');
     }
     
     function simpan() {
         var url;
         if (save_method == 'add') {
-            url = "{base_url}master/hak_akses/add";
+            url = "{base_url}master/customer/add";
         } else {
-            url = "{base_url}master/hak_akses/update";
+            url = "{base_url}master/customer/update";
         }
 
         $.ajax({
             url: url,
             type: "POST",
             data: {
-                id_hak_akses: $("input[name='id_hak_akses']").val(),
-                id_user: $("select[name='user']").val(),
-                id_transaksi: $("select[name='transaksi']").val(),
-                tambah: $('#tambah').prop('checked') == true ? 1 : 0,
-                ubah: $('#ubah').prop('checked') == true ? 1 : 0,
-                hapus: $('#hapus').prop('checked') == true ? 1 : 0,
-                lihat: $('#lihat').prop('checked') == true ? 1 : 0,
+                id_customer: $("input[name='id_customer']").val(),
+                nama_customer: $("input[name='nama_customer']").val(),
+                alamat: $("input[name='alamat']").val(),
+                telepon: $("input[name='telepon']").val(),
+                kontak_person: $("input[name='kontak_person']").val(),
+                email: $("input[name='email']").val(),
+                aktif: $('#aktif').prop('checked') == true ? 1 : 0,
                 method: save_method
             },
             dataType: "JSON",
@@ -197,7 +176,7 @@
             {
                 if (data.success) {
                     reload_table();
-                    //$('#modal_form').modal('hide');
+                    $('#modal_form').modal('hide');
                 } else {
                     var pesan = new BootstrapDialog({
                         type: BootstrapDialog.TYPE_WARNING,
@@ -213,7 +192,7 @@
                         ]
                     });
                     pesan.open();                    
-                }
+                }                
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
@@ -225,22 +204,22 @@
     function edit(id) {
         save_method = 'update';
         $('#form')[0].reset();
-        console.log(id);
+
         $.ajax({
-            url: "{base_url}master/hak_akses/edit/" + id,
+            url: "{base_url}master/customer/edit/" + id,
             type: "GET",
             dataType: "JSON",
             success: function (data) {
-                $('[name="id_hak_akses"]').val(data.id_hak_akses);
-                $('[name="user"]').val(data.id_user).trigger('change');
-                $('[name="transaksi"]').val(data.id_transaksi).trigger('change');
-                data.tambah == 1 ? $('#tambah').bootstrapToggle('on') : $('#tambah').bootstrapToggle('off');
-                data.ubah == 1 ? $('#ubah').bootstrapToggle('on') : $('#ubah').bootstrapToggle('off');
-                data.hapus == 1 ? $('#hapus').bootstrapToggle('on') : $('#hapus').bootstrapToggle('off');
-                data.lihat == 1 ? $('#lihat').bootstrapToggle('on') : $('#lihat').bootstrapToggle('off');
+                $('[name="id_customer"]').val(data.id_customer);
+                $('[name="nama_customer"]').val(data.nama_customer);
+                $('[name="alamat"]').val(data.alamat);
+                $('[name="telepon"]').val(data.telepon);
+                $('[name="kontak_person"]').val(data.kontak_person);
+                $('[name="email"]').val(data.email);
+                data.aktif == 1 ? $('#aktif').bootstrapToggle('on') : $('#aktif').bootstrapToggle('off');
 
                 $('#modal_form').modal('show');
-                $('.modal-title').text('Edit Hak Akses');
+                $('.modal-title').text('Edit Customer');
 
             },
             error: function (jqXHR, textStatus, errorThrown)
@@ -249,7 +228,7 @@
             }
         });
     }
-
+    
     function hapus(id) {
         BootstrapDialog.show({
         type: BootstrapDialog.TYPE_DANGER,
@@ -261,7 +240,7 @@
                     cssClass: 'btn-warning',
                     action: function(dialogItself) {
                         $.ajax({
-                            url: "{base_url}master/hak_akses/delete/" + id,
+                            url: "{base_url}master/customer/delete/" + id,
                             type: "POST",
                             dataType: "JSON",
                             success: function (data)
@@ -300,12 +279,12 @@
             }]                
         });        
     }
-
+    
     function edit_list(pre, id) {
         $.ajax({
-            url: "{base_url}master/hak_akses/active",
+            url: "{base_url}master/customer/active",
             type: "POST",
-            data: {id_hak_akses: id, field: pre, value: $('#' + pre + id).prop('checked') == true ? 1 : 0},
+            data: {id_customer: id, field: pre, value: $('#' + pre + id).prop('checked') == true ? 1 : 0},
             dataType: "JSON",
             success: function (data) {
                 if(!data.success) {
@@ -332,7 +311,5 @@
             }
         });
     }
-
-</script>
     
-
+</script>
