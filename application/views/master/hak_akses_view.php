@@ -56,14 +56,14 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3">Nama User</label>
                                 <div class="col-md-9">
-                                    <select id="user" name="user" class="form-control selectpicker" data-live-search="true">
+                                    <select id="user" name="user" class="form-control selectpicker" data-live-search="true" data-container="#modal_form">
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Transaksi</label>
                                 <div class="col-md-9">
-                                    <select id="transaksi" name="transaksi" class="form-control selectpicker" data-live-search="true">
+                                    <select id="transaksi" name="transaksi" class="form-control selectpicker" data-live-search="true" data-container="#modal_form">
                                     </select>
                                 </div>
                             </div>
@@ -150,12 +150,188 @@
         });
         
         $('.selectpicker').selectpicker({size: 10});
+        select_user('{base_url}', '#user');
+        select_transaksi('{base_url}', '#transaksi');
        
     });
     
-//    function reload_table() {
-//        table_hak_akses.ajax.reload(null, false);
-//    }
+    function reload_table() {
+        table_hak_akses.ajax.reload(null, false);
+    }
+    
+    function tambah() {
+        save_method = 'add';
+        $('#form')[0].reset();
+        $("input[name='id_hak_akses']").val('');
+        $('#tambah').bootstrapToggle('on');
+        $('#ubah').bootstrapToggle('on');
+        $('#hapus').bootstrapToggle('on');
+        $('#lihat').bootstrapToggle('on');
+        $('#modal_form').modal('show');
+        $('.modal-title').text('Tambah Hak Akses');
+    }
+    
+    function simpan() {
+        var url;
+        if (save_method == 'add') {
+            url = "{base_url}master/hak_akses/add";
+        } else {
+            url = "{base_url}master/hak_akses/update";
+        }
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+                id_hak_akses: $("input[name='id_hak_akses']").val(),
+                id_user: $("select[name='user']").val(),
+                id_transaksi: $("select[name='transaksi']").val(),
+                tambah: $('#tambah').prop('checked') == true ? 1 : 0,
+                ubah: $('#ubah').prop('checked') == true ? 1 : 0,
+                hapus: $('#hapus').prop('checked') == true ? 1 : 0,
+                lihat: $('#lihat').prop('checked') == true ? 1 : 0,
+                method: save_method
+            },
+            dataType: "JSON",
+            success: function (data)
+            {
+                if (data.success) {
+                    reload_table();
+                    $('#modal_form').modal('hide');
+                } else {
+                    var pesan = new BootstrapDialog({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Error',
+                        message: '<font color="red">' + data.msg + '</font>',
+                        buttons: [
+                            {
+                                label: 'Tutup',
+                                action: function (dialogRef) {
+                                    dialogRef.close();
+                                }
+                            }
+                        ]
+                    });
+                    pesan.open();                    
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
+    }
+    
+    function edit(id) {
+        save_method = 'update';
+        $('#form')[0].reset();
+        console.log(id);
+        $.ajax({
+            url: "{base_url}master/hak_akses/edit/" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function (data) {
+                $('[name="id_hak_akses"]').val(data.id_hak_akses);
+                $('[name="user"]').val(data.id_user).trigger('change');
+                $('[name="transaksi"]').val(data.id_transaksi).trigger('change');
+                data.tambah == 1 ? $('#tambah').bootstrapToggle('on') : $('#tambah').bootstrapToggle('off');
+                data.ubah == 1 ? $('#ubah').bootstrapToggle('on') : $('#ubah').bootstrapToggle('off');
+                data.hapus == 1 ? $('#hapus').bootstrapToggle('on') : $('#hapus').bootstrapToggle('off');
+                data.lihat == 1 ? $('#lihat').bootstrapToggle('on') : $('#lihat').bootstrapToggle('off');
+
+                $('#modal_form').modal('show');
+                $('.modal-title').text('Edit Hak Akses');
+
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
+    }
+
+    function hapus(id) {
+        BootstrapDialog.show({
+        type: BootstrapDialog.TYPE_DANGER,
+                title: 'Hapus',
+                message: 'Yakin ingin menghapus data ini?',
+                buttons: [{
+                    icon: 'glyphicon glyphicon-ban-circle',
+                    label: 'Hapus',
+                    cssClass: 'btn-warning',
+                    action: function(dialogItself) {
+                        $.ajax({
+                            url: "{base_url}master/hak_akses/delete/" + id,
+                            type: "POST",
+                            dataType: "JSON",
+                            success: function (data)
+                            {
+                                if(data.success) {
+                                    reload_table();
+                                    dialogItself.close();
+                                } else {
+                                    var pesan = new BootstrapDialog({
+                                        type: BootstrapDialog.TYPE_WARNING,
+                                        title: 'Error',
+                                        message: '<font color="red">' + data.msg + '</font>',
+                                        buttons: [
+                                            {
+                                                label: 'Tutup',
+                                                action: function (dialogRef) {
+                                                    dialogRef.close();
+                                                }
+                                            }
+                                        ]
+                                    });
+                                    pesan.open();
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown)
+                            {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                }, {
+                    label: 'Batal',
+                    action: function(dialogItself){
+                        dialogItself.close();
+                }
+            }]                
+        });        
+    }
+
+    function edit_list(pre, id) {
+        $.ajax({
+            url: "{base_url}master/hak_akses/active",
+            type: "POST",
+            data: {id_hak_akses: id, field: pre, value: $('#' + pre + id).prop('checked') == true ? 1 : 0},
+            dataType: "JSON",
+            success: function (data) {
+                if(!data.success) {
+                    var pesan = new BootstrapDialog({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Error',
+                        message: '<font color="red">' + data.msg + '</font>',
+                        buttons: [
+                            {
+                                label: 'Tutup',
+                                action: function (dialogRef) {
+                                    dialogRef.close();
+                                }
+                            }
+                        ]
+                    });
+                    pesan.open();
+                }
+                reload_table();
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
+    }
 
 </script>
     

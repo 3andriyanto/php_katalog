@@ -88,6 +88,50 @@ function select_unit2(base_url, element, dt) {
     });
 }
 
+function select_user(base_url, element, dt) {
+    $(element).empty();
+    $.ajax({
+        url: base_url + "master/user/get",
+        type: 'GET',
+        datatype: 'json',
+        success: function (data) {
+            var data = JSON.parse(data);
+            var options;
+            for (var i = 0; i < data['length']; i++) {
+                if (dt == data[i]['id_user']) {
+                    options += "<option value='" + data[i]['id_user'] + "' selected='selected'>" + data[i]['nama_user'] + "</option>";
+                } else {
+                    options += "<option value='" + data[i]['id_user'] + "'>" + data[i]['nama_user'] + "</option>";
+                }
+            }
+            $(element).append(options);
+            $('.selectpicker').selectpicker("refresh");
+        }
+    });
+}
+
+function select_transaksi(base_url, element, dt) {
+    $(element).empty();
+    $.ajax({
+        url: base_url + "master/transaksi/get",
+        type: 'GET',
+        datatype: 'json',
+        success: function (data) {
+            var data = JSON.parse(data);
+            var options;
+            for (var i = 0; i < data['length']; i++) {
+                if (dt == data[i]['id_transaksi']) {
+                    options += "<option value='" + data[i]['id_transaksi'] + "' selected='selected'>" + data[i]['nama_transaksi'] + "</option>";
+                } else {
+                    options += "<option value='" + data[i]['id_transaksi'] + "'>" + data[i]['nama_transaksi'] + "</option>";
+                }
+            }
+            $(element).append(options);
+            $('.selectpicker').selectpicker("refresh");
+        }
+    });
+}
+
 function select_wilayah(base_url, element, dt) {
     $(element).empty();
     $.ajax({

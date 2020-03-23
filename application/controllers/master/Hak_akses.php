@@ -6,6 +6,7 @@ if (!defined('BASEPATH')) {
 
 class Hak_akses extends MY_Controller {
     function __construct() {
+        parent::__construct();
         $this->kode_transaksi = "HAK_AKSES";
 
         $mdl = "hak_akses_model";
@@ -29,6 +30,33 @@ class Hak_akses extends MY_Controller {
 
         $this->model->fieldsView = $this->fields;
         
+    }
+    
+    public function dataInput() {
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('', '');
+
+        $this->form_validation->set_rules('id_user', 'Role', 'required');
+        $this->form_validation->set_rules('id_transaksi', 'Unit', 'required');
+        
+        if ($this->form_validation->run() == FALSE) {
+            return array("valid" => FALSE, "error" => validation_errors());
+        } else {
+            $data = array();
+            foreach ($this->input->post() as $key => $value) {
+                if($key == "method") {
+                } elseif($key == $this->pkField) {
+                    $data[$key] = !$value ? $this->uuid->v4() : $value;
+                } else {
+                    if(isset($value)) {
+                        $data[$key] = $value;
+                    }
+                }
+            }
+
+            return array("valid" => TRUE, "data" => $data);
+        }
     }
     
 }
