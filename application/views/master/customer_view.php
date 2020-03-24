@@ -24,6 +24,7 @@
                             <tr>
                                 <th>Action</th>
                                 <th>Nama</th>
+                                <th>Unit</th>
                                 <th>Alamat</th>
                                 <th>Telepon</th>
                                 <th>Kontak Person</th>
@@ -55,6 +56,13 @@
                                 <label class="control-label col-md-3">Nama</label>
                                 <div class="col-md-9">
                                     <input name="nama_customer" placeholder="Nama Customer" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Unit</label>
+                                <div class="col-md-9">
+                                    <select id="unit" name="unit" class="form-control selectpicker" data-live-search="true" data-container="#modal_form">
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -132,9 +140,12 @@
                 {"sClass": "left"},
                 {"sClass": "left"},
                 {"sClass": "left"},
+                {"sClass": "left"},
                 {"sClass": "center"}
             ]
         });
+        $('.selectpicker').selectpicker({size: 10});
+        select_unit2('{base_url}', '#unit');
     });
     
     function reload_table() {
@@ -164,6 +175,7 @@
             data: {
                 id_customer: $("input[name='id_customer']").val(),
                 nama_customer: $("input[name='nama_customer']").val(),
+                id_unit: $( "select[name='unit']").val(),
                 alamat: $("input[name='alamat']").val(),
                 telepon: $("input[name='telepon']").val(),
                 kontak_person: $("input[name='kontak_person']").val(),
@@ -212,6 +224,7 @@
             success: function (data) {
                 $('[name="id_customer"]').val(data.id_customer);
                 $('[name="nama_customer"]').val(data.nama_customer);
+                $('[name="id_unit"]').val(data.id_unit);
                 $('[name="alamat"]').val(data.alamat);
                 $('[name="telepon"]').val(data.telepon);
                 $('[name="kontak_person"]').val(data.kontak_person);
@@ -220,7 +233,6 @@
 
                 $('#modal_form').modal('show');
                 $('.modal-title').text('Edit Customer');
-
             },
             error: function (jqXHR, textStatus, errorThrown)
             {

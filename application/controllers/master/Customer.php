@@ -24,6 +24,7 @@ class Customer extends MY_Controller {
         $this->fields = array(
             "action" => array("TIPE" => "TRANSACTION", "LABEL" => "Action"),
             "nama_customer" => array("TIPE" => "STRING", "LABEL" => "Nama Customer"),
+            "nama_unit" => array("TIPE" => "STRING", "LABEL" => "Nama Unit"),
             "alamat" => array("TIPE" => "STRING", "LABEL" => "Alamat"),
             "telepon" => array("TIPE" => "STRING", "LABEL" => "Telepon"),
             "kontak_person" => array("TIPE" => "STRING", "LABEL" => "Kontak Person"),
