@@ -57,7 +57,7 @@ class MY_Controller extends CI_Controller {
         }
     }
 
-    public function ajax_list() {
+    public function ajax_list($filter) {
         $this->get_hak_akses($this->kode_transaksi);
         if (!$this->lihat) {
             $output = array(
@@ -67,9 +67,9 @@ class MY_Controller extends CI_Controller {
                 "data" => array()
             );
         } else {
-            $filter = array();
-            if($this->input->post("filter")) {
-                foreach ($this->input->post("filter") as $key => $value) {
+            //$filter = array();
+            if($filter) {
+                foreach ($filter as $key => $value) {
                     if (strpos($key, ".")) {
                         $filter[$key] = $value;
                     } else {

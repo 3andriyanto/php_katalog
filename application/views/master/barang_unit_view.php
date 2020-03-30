@@ -180,7 +180,7 @@
             serverSide: true,
             responsive: true,
             ajax: {
-                url: "{base_url}master/barang_unit/ajax_list",
+                url: "{base_url}master/barang_unit/ajaxlist",
                 type: "POST"
             },
             columnDefs: [
