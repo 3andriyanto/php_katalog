@@ -162,6 +162,8 @@
     function tambah() {
         save_method = 'add';
         $('#form')[0].reset();
+        select_user('{base_url}', '#user');
+        select_transaksi('{base_url}', '#transaksi');
         $("input[name='id_hak_akses']").val('');
         $('#tambah').bootstrapToggle('on');
         $('#ubah').bootstrapToggle('on');
@@ -169,6 +171,8 @@
         $('#lihat').bootstrapToggle('on');
         $('#modal_form').modal('show');
         $('.modal-title').text('Tambah Hak Akses');
+         $('[name="user"]').selectmenu('refresh');
+        $('[name="transaksi"]').selectmenu('refresh');
     }
     
     function simpan() {
