@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2020 at 04:52 AM
+-- Generation Time: Mar 24, 2020 at 09:58 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -46,12 +46,16 @@ INSERT INTO `hak_akses` (`id_hak_akses`, `id_user`, `id_transaksi`, `tambah`, `u
 ('01103b84-81cd-4385-bac1-f21db20ebd43', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', 'd1e55ed8-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('016c58a2-6a10-4266-a510-98f2f82fcb83', '193fd680-05df-4bae-9c4b-8390e71af31b', '69b79415-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('30fb573c-5c3a-4724-bcb7-d40ccc7ae20d', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', '9ad1822c-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
+('574efaa1-fcbe-4a41-bcc7-b958f237cb27', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', '5528gb-1290-cc35hv8-2bbfc776i09771ad', 1, 1, 1, 1),
+('71296516-94e0-40da-975e-d3b5c3aba539', 'db443270-16f9-4bee-95aa-82ddbb2b54cb', 'a85f6b41-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('78uhg6-b19md-az7y-298ugv-88hbc60lkm', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', '87b8373c-578b-11e5-a643-902b34d4622b', 1, 1, 1, 1),
 ('81c63298-eba2-4dda-ab04-046c7d441e58', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', '69b79415-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('95a81dbc-3630-4de2-83d2-64cf93481999', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', 'a85f6b41-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('9a48dc5f-26c0-46bf-84f0-996880e08901', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', 'a1b038a9-5773-11e5-a643-902b34d4622b', 1, 1, 1, 1),
+('9e70d0f3-f22f-4bcb-909e-740dc018fdb6', 'c3fcd1a1-c9c0-4396-a555-847946bb46ad', 'a85f6b41-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('ae5a93cb-0756-46e4-9877-f72884aacfd7', '193fd680-05df-4bae-9c4b-8390e71af31b', '9ad1822c-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('b3d64a03-416e-4bda-8ce6-cae116ab721f', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', '7fe78ddb-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
+('b539d578-489f-498d-935d-a85041c6a06c', 'db443270-16f9-4bee-95aa-82ddbb2b54cb', '9ad1822c-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('be40357c-1084-419c-9b47-965a56757c89', '193fd680-05df-4bae-9c4b-8390e71af31b', 'ab340ec3-5c53-11e5-a774-002590adcb83', 1, 1, 1, 1),
 ('c5e5cd8f-b071-49f2-af99-70361a19832b', '442c9dd9-499e-11e5-bbd3-00ffaf90c978', 'beab369c-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
 ('d5655c3d-1b1b-45cc-b492-7939de58b761', '193fd680-05df-4bae-9c4b-8390e71af31b', 'beab369c-55f9-11e5-a609-902b34d4622b', 1, 1, 1, 1),
@@ -890,6 +894,30 @@ INSERT INTO `m_barang_unit` (`id_barang_unit`, `tanggal`, `nama_barang_unit`, `s
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `m_customer`
+--
+
+CREATE TABLE `m_customer` (
+  `id_customer` varchar(50) NOT NULL,
+  `nama_customer` varchar(50) NOT NULL,
+  `id_unit` varchar(36) NOT NULL,
+  `alamat` varchar(150) NOT NULL,
+  `telepon` varchar(50) NOT NULL,
+  `kontak_person` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `aktif` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `m_customer`
+--
+
+INSERT INTO `m_customer` (`id_customer`, `nama_customer`, `id_unit`, `alamat`, `telepon`, `kontak_person`, `email`, `aktif`) VALUES
+('452a3921-01d7-4118-b210-c9037b027dda', 'TOKO MUSIK', '43998776-7b1f-4573-b319-39915f93f96e', 'Sentul Bogor', '07829201111', 'Haji Andre', 'toko@musik.com', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `m_distributor`
 --
 
@@ -1104,6 +1132,7 @@ CREATE TABLE `m_transaksi` (
 --
 
 INSERT INTO `m_transaksi` (`id_transaksi`, `kode_transaksi`, `nama_transaksi`) VALUES
+('5528gb-1290-cc35hv8-2bbfc776i09771ad', 'CUSTOMER', 'MASTER CUSTOMER'),
 ('69b79415-55f9-11e5-a609-902b34d4622b', 'MEREK', 'MASTER MEREK'),
 ('7fe78ddb-55f9-11e5-a609-902b34d4622b', 'KATEGORI', 'MASTER KATEGORI'),
 ('87b8373c-578b-11e5-a643-902b34d4622b', 'ROLE', 'MASTER ROLE'),
@@ -1216,9 +1245,9 @@ CREATE TABLE `m_users` (
 
 INSERT INTO `m_users` (`id_user`, `nama_user`, `password`, `email`, `id_role`, `aktif`, `departemen`, `id_unit`, `photo`) VALUES
 ('193fd680-05df-4bae-9c4b-8390e71af31b', 'Icha', '646568576460a51f014364ed71628f47', 'mis@cahayabuana.co.id', '1779ba70-499e-11e5-bbd3-00ffaf90c978', 1, 'MIS', '373af58a-0cc0-4f5e-b5e4-43c857967f50', 'Icha.png'),
-('2f5139c2-2f0e-4ecf-8fc2-9b059770d390', 'Unit', 'ba2fc57c3fc0556651e4dbc263b8770a', 'unit@unit.com', 'b259037c-4fbe-11e5-acc3-902b34d4622b', 1, 'MARKETING', '373af58a-0cc0-4f5e-b5e4-43c857967f50', 'TES.png'),
 ('442c9dd9-499e-11e5-bbd3-00ffaf90c978', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', '1779ba70-499e-11e5-bbd3-00ffaf90c978', 1, 'MIS', '373af58a-0cc0-4f5e-b5e4-43c857967f50', 'no_photo.png'),
-('bdc3c765-892f-4c39-a409-b4b332088d18', 'TRI', '222', 'adm', '1779ba70-499e-11e5-bbd3-00ffaf90c978', 1, 'MIS', '17054659-52d1-4e8a-ac27-eaecd6763191', 'TRI.png');
+('c3fcd1a1-c9c0-4396-a555-847946bb46ad', 'dinda', '202cb962ac59075b964b07152d234b70', 'dinda@mail.com', '1779ba70-499e-11e5-bbd3-00ffaf90c978', 1, 'MIS', '43998776-7b1f-4573-b319-39915f93f96e', 'no_photo.png'),
+('db443270-16f9-4bee-95aa-82ddbb2b54cb', 'XXX', 'f561aaf6ef0bf14d4208bb46a4ccb3ad', 'xxx@xxx.com', '1779ba70-499e-11e5-bbd3-00ffaf90c978', 1, 'XXX', 'ddaf6bb3-eb3a-4830-893d-a294c289ad47', 'XXX.png');
 
 -- --------------------------------------------------------
 
@@ -1780,6 +1809,13 @@ ALTER TABLE `m_barang_unit`
   ADD KEY `fk_m_barang_unit_idx` (`id_barang_unit`);
 
 --
+-- Indexes for table `m_customer`
+--
+ALTER TABLE `m_customer`
+  ADD PRIMARY KEY (`id_customer`),
+  ADD KEY `id_unit` (`id_unit`);
+
+--
 -- Indexes for table `m_distributor`
 --
 ALTER TABLE `m_distributor`
@@ -1854,6 +1890,12 @@ ALTER TABLE `hak_akses`
 --
 ALTER TABLE `m_barang`
   ADD CONSTRAINT `fk_m_barang_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `m_kategori` (`id_kategori`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `m_customer`
+--
+ALTER TABLE `m_customer`
+  ADD CONSTRAINT `m_customer_ibfk_1` FOREIGN KEY (`id_unit`) REFERENCES `m_unit` (`id_unit`);
 
 --
 -- Constraints for table `m_kategori`
