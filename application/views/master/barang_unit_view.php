@@ -15,7 +15,7 @@
             <div class="box">
                 <div class="box-header">
                     <!--<h3 class="box-title">Master Barang Unit {user_unit}</h3>-->
-                    <h3 class="box-title">Master Barang Unit</h3>
+                    <h3 class="box-title">Master Barang Unit {user_unit}</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <button class="btn btn-sm btn-success" onclick="tambah()" style="margin-bottom: 10px;"><i class="glyphicon glyphicon-plus"></i> Tambah</button>
@@ -58,7 +58,8 @@
                                 <div id="unit-group" class="form-group">
                                     <label class="control-label col-sm-3">Unit</label>
                                     <div class="col-sm-9">
-                                        <select id="unit" name="unit" class="form-control selectpicker" data-live-search="true" >
+                                        <select id="unit" name="unit" class="form-control selectpicker" data-live-search="true" disabled>
+                                            <option value={user_id_unit}>{user_unit}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -210,7 +211,7 @@
             ]
         });
         
-        select_unit2('{base_url}', '#unit');
+        //select_unit2('{base_url}', '#unit');
         select_kategori('{base_url}', '#kategori');
         $('.selectpicker').selectpicker({size: 10});
         
