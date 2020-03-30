@@ -51,7 +51,7 @@ class Barang_unit extends MY_Controller {
         if ($this->input->post("new") != "") {
             $filter["m_barang_unit.new"] = $this->input->post("new");
         }
-
+        $filter["m_barang_unit.id_unit"]  = $this->session->userdata('sess_id_unit');
         $this->ajax_list($filter);
     }
 

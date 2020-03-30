@@ -42,7 +42,7 @@ class MY_Model extends CI_Model {
             }
             if (!empty($this->fields)) {
                 foreach ($this->fields as $field) {
-                    if(($pos = strpos($field, " AS ")) !== FALSE) {
+                    if (($pos = strpos($field, " AS ")) !== FALSE) {
                         $field = substr($field, 0, $pos);
                     }
                     if (stristr(trim($field), ' ') === FALSE) {
@@ -93,7 +93,7 @@ class MY_Model extends CI_Model {
             }
             if (!empty($this->fields)) {
                 foreach ($this->fields as $field) {
-                    if(($pos = strpos($field, " AS ")) !== FALSE) {
+                    if (($pos = strpos($field, " AS ")) !== FALSE) {
                         $field = substr($field, 0, $pos);
                     }
                     if (stristr(trim($field), ' ') === FALSE) {
@@ -131,31 +131,49 @@ class MY_Model extends CI_Model {
             }
         }
         $this->db->where($this->primaryKey . " is not null");
-        if (!empty($condition)) {
-            foreach ($condition as $key => $value) {
-                if($value != "ALL") {
-                    $this->db->where($key, $value);
-                }
-            }
-        }
 
+          if (!empty($condition)) {
+
+
+                    foreach ($condition as $key => $value) {
+                        if ($value != "ALL") {
+                            $this->db->where($key, $value);
+                        }
+                    }
+                }
+        
         $i = 0;
 
         foreach ($this->fields as $item) {
-            if(($pos = strpos($item, " AS ")) !== FALSE) {
+            if (($pos = strpos($item, " AS ")) !== FALSE) {
                 $item = substr($item, 0, $pos);
             }
             if ($_POST['search']['value']) {
+
                 ($i === 0) ? $this->db->like($item, $_POST['search']['value']) : $this->db->or_like($item, $_POST['search']['value']);
+                // $this->db->where("m_barang_unit.id_unit","43998776-7b1f-4573-b319-39915f93f96e");
+
+                if (!empty($condition)) {
+
+
+                    foreach ($condition as $key => $value) {
+                        if ($value != "ALL") {
+                            $this->db->where($key, $value);
+                        }
+                    }
+                }
             }
             $column[$i] = $item;
             $i++;
         }
+
+
+
         $this->db->from($this->table);
 
         if (isset($_POST['order'])) {
             $orderFieldsView = array_keys($this->fieldsView);
-            if($orderFieldsView[$_POST['order']['0']['column']] == "action") {
+            if ($orderFieldsView[$_POST['order']['0']['column']] == "action") {
                 if (!empty($this->orderBy)) {
                     foreach ($this->orderBy as $key => $value) {
                         $this->db->order_by($key, $value);
@@ -215,12 +233,11 @@ class MY_Model extends CI_Model {
 
     public function add($data) {
         try {
-        $this->db->insert($this->table, $data);
-        return ($this->db->affected_rows() > 0);
-
-      } catch (Exception $e) {
-          return false;
-      }
+            $this->db->insert($this->table, $data);
+            return ($this->db->affected_rows() > 0);
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
     public function update($id, $data) {
