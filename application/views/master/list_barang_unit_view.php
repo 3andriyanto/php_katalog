@@ -24,8 +24,6 @@
                                     <th>Action</th>
                                     <th>Gambar</th>
                                     <th>Nama</th>
-                                    <th>Satuan</th>
-                                    <th>Merek</th>
                                     <th>Ukuran</th>
                                     <th>Harga</th>
                                 </tr>
@@ -37,6 +35,48 @@
             </div><!-- /.box -->
         </div><!-- /.col -->
     </div><!-- /.row -->
+    
+    <!-- Bootstrap modal -->
+    <div class="modal fade" id="modal_form" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Form</h3>
+                </div>
+                <div class="modal-body form">
+                    <form action="#" id="form" class="form-horizontal">
+                        <input type="hidden" value="" name="id_barang_unit"/>
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Nama</label>
+                                <div class="col-md-9">
+                                    <input name="nama_barang_unit" placeholder="Nama Barang" class="form-control" type="text" disabled="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Qty</label>
+                                <div class="col-md-9">
+                                    <input id="qty" name="qty" class="form-control" type="number" min="1" value="1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3"></label>
+                                <div class="col-sm-9">
+                                    <img id="barang_img" src="#" width="80%" alt="gambar"></img>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnSave" onclick="simpan()" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- End Bootstrap modal -->
 
 </section>
 
@@ -63,7 +103,7 @@
                     targets: [-1],
                     orderable: false
                 },
-                
+
                 {width: "50px", targets: 0}
             ],
             aoColumns: [
@@ -71,15 +111,9 @@
                 {"sClass": "left"},
                 {"sClass": "left"},
                 {"sClass": "left"},
-                {"sClass": "left"},
-                {"sClass": "left"},
                 {"sClass": "right"}
             ]
         });
-        
-        //select_unit2('{base_url}', '#unit');
-        //select_kategori('{base_url}', '#kategori');
-        //$('.selectpicker').selectpicker({size: 10});
         
     });
 
@@ -122,6 +156,50 @@
 
     function clearFileInput(id) {
         $('#' + id).html($('#' + id).html());
+    }
+    
+    function edit(id) {
+        save_method = 'update';
+        $('#form')[0].reset();
+
+        $.ajax({
+            url: "{base_url}master/list_barang_unit/edit/" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function (data) {
+//                $('[name="id_barang_unit"]').val(data.id_barang_unit);
+//                $('[name="unit"]').val(data.id_unit).trigger('change');
+//                $('[name="tanggal"]').val(tanggal_mask(data.tanggal));
+                $('[name="nama_barang_unit"]').val(data.nama_barang_unit);
+//                $('[name="satuan"]').val(data.satuan);
+//                $('#deskripsi').summernote('code', data.deskripsi);
+//                $('[name=harga]').val(data.harga);
+//                $('[name="kategori"]').val(data.id_kategori).trigger('change');
+//                $('[name="ukuran"]').val(data.ukuran);
+//                data.new == 1 ? $('#new').bootstrapToggle('on') : $('#new').bootstrapToggle('off');
+//                data.aktif == 1 ? $('#aktif').bootstrapToggle('on') : $('#aktif').bootstrapToggle('off');
+                
+//                clearFileInput('gambar');
+                foto = data.gambar == '' ? 'no_image.png' : data.gambar;
+                image_url = '{base_url}asset/image/produk_unit/' + foto;
+                foto_barang_unit = foto;
+                $.get(image_url)
+                        .done(function () {
+                            $('#barang_img').attr('src', image_url);
+                        })
+                        .fail(function () {
+                            $('#barang_img').attr('src', '{base_url}asset/image/produk_unit/no_image.png');
+                        });
+
+                $('#modal_form').modal('show');
+                $('.modal-title').text('Add To Chart');
+
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
     }
 
 </script>
