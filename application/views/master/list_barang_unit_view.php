@@ -63,12 +63,12 @@
                     targets: [-1],
                     orderable: false
                 },
-                {
-                    targets: 7,
-                    render: function (data, type, full, meta) {
-                        return data;
-                    }
-                },
+//                {
+//                    targets: 7,
+//                    render: function (data, type, full, meta) {
+//                        return data;
+//                    }
+//                },
                 {width: "50px", targets: 0}
             ],
             aoColumns: [

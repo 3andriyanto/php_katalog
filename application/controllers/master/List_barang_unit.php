@@ -22,7 +22,7 @@ class List_barang_unit extends MY_Controller {
         //pair key value (field => TYPE)
         //TYPE: EMAIL/STRING/INT/FLOAT/BOOLEAN/DATE/PASSWORD/URL/IP/MAC/RAW/DATA
         $this->fields = array(
-            "action" => array("TIPE" => "TRANSACTION", "LABEL" => "Action"),
+            "action" => array("TIPE" => "TRANSACTION", "LABEL" => "actionAddTo"),
             "gambar" => array("TIPE" => "IMAGE", "LABEL" => "Gambar", "LOKASI" => "asset/image/produk_unit/thumb/"),
             "nama_barang_unit" => array("TIPE" => "STRING", "LABEL" => "Nama Barang"),
             "satuan" => array("TIPE" => "STRING", "LABEL" => "Satuan"),

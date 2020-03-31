@@ -173,7 +173,7 @@ class MY_Model extends CI_Model {
 
         if (isset($_POST['order'])) {
             $orderFieldsView = array_keys($this->fieldsView);
-            if ($orderFieldsView[$_POST['order']['0']['column']] == "action") {
+            if ($orderFieldsView[$_POST['order']['0']['column']] == "action" ) {
                 if (!empty($this->orderBy)) {
                     foreach ($this->orderBy as $key => $value) {
                         $this->db->order_by($key, $value);

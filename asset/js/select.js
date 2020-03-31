@@ -100,6 +100,7 @@ function select_user(base_url, element, dt) {
             for (var i = 0; i < data['length']; i++) {
                 if (dt == data[i]['id_user']) {
                     options += "<option value='" + data[i]['id_user'] + "' selected='selected'>" + data[i]['nama_user'] + "</option>";
+                
                 } else {
                     options += "<option value='" + data[i]['id_user'] + "'>" + data[i]['nama_user'] + "</option>";
                 }
