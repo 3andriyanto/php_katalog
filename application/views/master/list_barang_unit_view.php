@@ -48,7 +48,7 @@
                     <form action="#" id="form" class="form-horizontal">
                         <input type="hidden" value="" name="id_keranjang_belanja"/>
                         <input type="hidden" value="" name="id_barang_unit"/>
-                        <input type="hidden" value="{user_id_unit}" name="id_user"/>
+                        <input type="hidden" value="{user_id}" name="id_user"/>
                         <div class="form-body">
                             <div class="form-group">
                                 <label class="control-label col-sm-3"></label>
@@ -176,12 +176,12 @@
                 image_url = '{base_url}asset/image/produk_unit/' + foto;
                 foto_barang_unit = foto;
                 $.get(image_url)
-                        .done(function () {
-                            $('#barang_img').attr('src', image_url);
-                        })
-                        .fail(function () {
-                            $('#barang_img').attr('src', '{base_url}asset/image/produk_unit/no_image.png');
-                        });
+                    .done(function () {
+                        $('#barang_img').attr('src', image_url);
+                    })
+                    .fail(function () {
+                        $('#barang_img').attr('src', '{base_url}asset/image/produk_unit/no_image.png');
+                    });
 
                 $('#modal_form').modal('show');
                 $('.modal-title').text('Add To Chart');
@@ -202,6 +202,7 @@
             url: url,
             type: "POST",
             data: {
+                id_keranjang_belanja: $("input[name='id_keranjang_belanja']").val(),
                 id_user: $("input[name='id_user']").val(),
                 id_barang_unit: $("input[name='id_barang_unit']").val(),
                 qty: $("input[name='qty']").val(),
