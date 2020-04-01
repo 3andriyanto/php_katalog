@@ -46,12 +46,20 @@
                 </div>
                 <div class="modal-body form">
                     <form action="#" id="form" class="form-horizontal">
+                        <input type="hidden" value="" name="id_keranjang_belanja"/>
                         <input type="hidden" value="" name="id_barang_unit"/>
+                        <input type="hidden" value="{user_id_unit}" name="id_user"/>
                         <div class="form-body">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3"></label>
+                                <div class="col-sm-9">
+                                    <img id="barang_img" src="#" width="80%" alt="gambar"></img>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Nama</label>
                                 <div class="col-md-9">
-                                    <input name="nama_barang_unit" placeholder="Nama Barang" class="form-control" type="text" disabled="">
+                                    <input name="nama_barang_unit" placeholder="Nama Barang" class="form-control" type="text" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -60,18 +68,11 @@
                                     <input id="qty" name="qty" class="form-control" type="number" min="1" value="1">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-3"></label>
-                                <div class="col-sm-9">
-                                    <img id="barang_img" src="#" width="80%" alt="gambar"></img>
-                                </div>
-                            </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="btnSave" onclick="simpan()" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="btnSave" onclick="simpan()" class="btn btn-lg btn-success">Add</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -159,27 +160,18 @@
     }
     
     function edit(id) {
-        save_method = 'update';
+        save_method = 'add';
         $('#form')[0].reset();
+        $("input[name='id_keranjang_belanja']").val('');
 
         $.ajax({
             url: "{base_url}master/list_barang_unit/edit/" + id,
             type: "GET",
             dataType: "JSON",
             success: function (data) {
-//                $('[name="id_barang_unit"]').val(data.id_barang_unit);
-//                $('[name="unit"]').val(data.id_unit).trigger('change');
-//                $('[name="tanggal"]').val(tanggal_mask(data.tanggal));
+                $('[name="id_keranjang_belanja"]').val(data.id_keranjang_belanja);
+                $('[name="id_barang_unit"]').val(data.id_barang_unit);
                 $('[name="nama_barang_unit"]').val(data.nama_barang_unit);
-//                $('[name="satuan"]').val(data.satuan);
-//                $('#deskripsi').summernote('code', data.deskripsi);
-//                $('[name=harga]').val(data.harga);
-//                $('[name="kategori"]').val(data.id_kategori).trigger('change');
-//                $('[name="ukuran"]').val(data.ukuran);
-//                data.new == 1 ? $('#new').bootstrapToggle('on') : $('#new').bootstrapToggle('off');
-//                data.aktif == 1 ? $('#aktif').bootstrapToggle('on') : $('#aktif').bootstrapToggle('off');
-                
-//                clearFileInput('gambar');
                 foto = data.gambar == '' ? 'no_image.png' : data.gambar;
                 image_url = '{base_url}asset/image/produk_unit/' + foto;
                 foto_barang_unit = foto;
@@ -194,6 +186,49 @@
                 $('#modal_form').modal('show');
                 $('.modal-title').text('Add To Chart');
 
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
+    }
+    
+    function simpan() {
+        var url;
+        url = "{base_url}master/keranjang_belanja/add";
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+                id_user: $("input[name='id_user']").val(),
+                id_barang_unit: $("input[name='id_barang_unit']").val(),
+                qty: $("input[name='qty']").val(),
+                method: save_method
+            },
+            dataType: "JSON",
+            success: function (data)
+            {
+                if (data.success) {
+                    reload_table();
+                    $('#modal_form').modal('hide');
+                } else {
+                    var pesan = new BootstrapDialog({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Error',
+                        message: '<font color="red">' + data.msg + '</font>',
+                        buttons: [
+                            {
+                                label: 'Tutup',
+                                action: function (dialogRef) {
+                                    dialogRef.close();
+                                }
+                            }
+                        ]
+                    });
+                    pesan.open();                    
+                }
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
