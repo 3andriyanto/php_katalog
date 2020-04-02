@@ -18,17 +18,19 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <!--<button class="btn btn-sm btn-success" onclick="tambah()" style="margin-bottom: 10px;"><i class="glyphicon glyphicon-plus"></i> Tambah</button>-->
-                        <table id="list_keranjang_belanja" class="display responsive table table-bordered table-hover" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Pilih</th>
-                                    <th>Nama</th>
-                                    <th>Qty</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                    <table id="list_keranjang_belanja" class="display responsive table table-bordered table-hover" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Pilih</th>
+                                <th>Gambar</th>
+                                <th>Nama</th>
+                                <th>Harga</th>
+                                <th>Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div><!-- /.col -->
@@ -51,7 +53,7 @@
             serverSide: true,
             responsive: true,
             ajax: {
-                url: "{base_url}master/keranjang_belanja/ajaxlist",
+                url: "{base_url}master/keranjang_belanja/ajax_list",
                 type: "POST"
             },
             columnDefs: [
@@ -65,6 +67,8 @@
             aoColumns: [
                 {"sClass": "center"},
                 {"sClass": "left"},
+                {"sClass": "left"},
+                {"sClass": "right"},
                 {"sClass": "right"}
             ]
         });
