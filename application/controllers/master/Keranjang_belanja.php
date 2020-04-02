@@ -23,8 +23,10 @@ class Keranjang_belanja extends MY_Controller {
         //TYPE: EMAIL/STRING/INT/FLOAT/BOOLEAN/DATE/PASSWORD/URL/IP/MAC/RAW/DATA
         $this->fields = array(
             "action" => array("TIPE" => "TRANSACTION", "LABEL" => "actionCheck"),
+            "gambar" => array("TIPE" => "IMAGE", "LABEL" => "Gambar", "LOKASI" => "asset/image/produk_unit/thumb/"),
             "nama_barang_unit" => array("TIPE" => "STRING", "LABEL" => "Nama Barang"),
-            "qty" => array("TIPE" => "INTEGER", "LABEL" => "Qty")
+            "harga" => array("TIPE" => "DOUBLE", "LABEL" => "Harga"),
+            "qty" => array("TIPE" => "INT", "LABEL" => "Qty")
         );
 
         $this->model->fieldsView = $this->fields;

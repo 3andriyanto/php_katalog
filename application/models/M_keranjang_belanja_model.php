@@ -11,9 +11,11 @@ class M_keranjang_belanja_model extends MY_Model {
           "m_users.nama_user",
           "keranjang_belanja.id_barang_unit",
           "m_barang_unit.nama_barang_unit",
+          "m_barang_unit.gambar",
+          "m_barang_unit.harga",
           "keranjang_belanja.qty"
           );
-      $this->orderBy = array("keranjang_belanja.nama_barang_unit" => "ASC");
+      $this->orderBy = array("m_barang_unit.nama_barang_unit" => "ASC");
       $this->relations = array("m_users" => "keranjang_belanja.id_user = m_users.id_user",
                                "m_barang_unit" => "keranjang_belanja.id_barang_unit = m_barang_unit.id_barang_unit");
   }
