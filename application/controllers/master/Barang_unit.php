@@ -42,8 +42,10 @@ class Barang_unit extends MY_Controller {
         if ($this->input->post("id_merek")) {
             $filter["m_kategori.id_merek"] = $this->input->post("id_merek");
         }
-        if ($this->input->post("id_kategori")) {
+        if ($this->input->post("id_kategori") ) {
+            if ($this->input->post("id_kategori") != "-"){
             $filter["m_barang_unit.id_kategori"] = $this->input->post("id_kategori");
+            }
         }
         if ($this->input->post("id_unit")) {
             $filter["m_barang_unit.id_unit"] = $this->input->post("id_unit");
