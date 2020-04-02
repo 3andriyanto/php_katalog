@@ -287,6 +287,7 @@ class MY_Controller extends CI_Controller {
     }
     
      public function actionAddTo($id) {
+        //return '<a class="btn btn-sm btn-primary" href="javascript:void(0);" title="Add To Chart" onclick="edit(' . "'" . $id . "'" . ')"><i class="glyphicon glyphicon-shopping-cart"></i></a>';
          return '<a class="btn btn-lg btn-success" href="javascript:void(0);" title="Add To Chart" onclick="edit(' . "'" . $id . "'" . ')"><i class="glyphicon glyphicon-shopping-cart"></i></a>';
     }
                         

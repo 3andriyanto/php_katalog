@@ -24,8 +24,6 @@
                                     <th>Action</th>
                                     <th>Gambar</th>
                                     <th>Nama</th>
-                                    <th>Satuan</th>
-                                    <th>Merek</th>
                                     <th>Ukuran</th>
                                     <th>Harga</th>
                                 </tr>
@@ -37,6 +35,49 @@
             </div><!-- /.box -->
         </div><!-- /.col -->
     </div><!-- /.row -->
+    
+    <!-- Bootstrap modal -->
+    <div class="modal fade" id="modal_form" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Form</h3>
+                </div>
+                <div class="modal-body form">
+                    <form action="#" id="form" class="form-horizontal">
+                        <input type="hidden" value="" name="id_keranjang_belanja"/>
+                        <input type="hidden" value="" name="id_barang_unit"/>
+                        <input type="hidden" value="{user_id}" name="id_user"/>
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3"></label>
+                                <div class="col-sm-9">
+                                    <img id="barang_img" src="#" width="80%" alt="gambar"></img>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Nama</label>
+                                <div class="col-md-9">
+                                    <input name="nama_barang_unit" placeholder="Nama Barang" class="form-control" type="text" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Qty</label>
+                                <div class="col-md-9">
+                                    <input id="qty" name="qty" class="form-control" type="number" min="1" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnSave" onclick="simpan()" class="btn btn-lg btn-success">Add</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- End Bootstrap modal -->
 
 </section>
 
@@ -63,12 +104,7 @@
                     targets: [-1],
                     orderable: false
                 },
-//                {
-//                    targets: 7,
-//                    render: function (data, type, full, meta) {
-//                        return data;
-//                    }
-//                },
+
                 {width: "50px", targets: 0}
             ],
             aoColumns: [
@@ -76,15 +112,9 @@
                 {"sClass": "left"},
                 {"sClass": "left"},
                 {"sClass": "left"},
-                {"sClass": "left"},
-                {"sClass": "left"},
                 {"sClass": "right"}
             ]
         });
-        
-        //select_unit2('{base_url}', '#unit');
-        //select_kategori('{base_url}', '#kategori');
-        //$('.selectpicker').selectpicker({size: 10});
         
     });
 
@@ -127,6 +157,85 @@
 
     function clearFileInput(id) {
         $('#' + id).html($('#' + id).html());
+    }
+    
+    function edit(id) {
+        save_method = 'add';
+        $('#form')[0].reset();
+        $("input[name='id_keranjang_belanja']").val('');
+
+        $.ajax({
+            url: "{base_url}master/list_barang_unit/edit/" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function (data) {
+                $('[name="id_keranjang_belanja"]').val(data.id_keranjang_belanja);
+                $('[name="id_barang_unit"]').val(data.id_barang_unit);
+                $('[name="nama_barang_unit"]').val(data.nama_barang_unit);
+                foto = data.gambar == '' ? 'no_image.png' : data.gambar;
+                image_url = '{base_url}asset/image/produk_unit/' + foto;
+                foto_barang_unit = foto;
+                $.get(image_url)
+                    .done(function () {
+                        $('#barang_img').attr('src', image_url);
+                    })
+                    .fail(function () {
+                        $('#barang_img').attr('src', '{base_url}asset/image/produk_unit/no_image.png');
+                    });
+
+                $('#modal_form').modal('show');
+                $('.modal-title').text('Add To Chart');
+
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
+    }
+    
+    function simpan() {
+        var url;
+        url = "{base_url}master/keranjang_belanja/add";
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+                id_keranjang_belanja: $("input[name='id_keranjang_belanja']").val(),
+                id_user: $("input[name='id_user']").val(),
+                id_barang_unit: $("input[name='id_barang_unit']").val(),
+                qty: $("input[name='qty']").val(),
+                method: save_method
+            },
+            dataType: "JSON",
+            success: function (data)
+            {
+                if (data.success) {
+                    reload_table();
+                    $('#modal_form').modal('hide');
+                } else {
+                    var pesan = new BootstrapDialog({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Error',
+                        message: '<font color="red">' + data.msg + '</font>',
+                        buttons: [
+                            {
+                                label: 'Tutup',
+                                action: function (dialogRef) {
+                                    dialogRef.close();
+                                }
+                            }
+                        ]
+                    });
+                    pesan.open();                    
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
     }
 
 </script>
