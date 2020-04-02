@@ -44,6 +44,30 @@ function select_kategori(base_url, element, filter, dt) {
     });
 }
 
+function select_kategoriFilter(base_url, element, filter, dt) {
+    id_merek = (filter == null || filter == '') ? {} : {id_merek: filter};
+    $(element).empty();
+    $.ajax({
+        url: base_url + "master/kategori/get",
+        type: 'GET',
+        data: id_merek,
+        datatype: 'json',
+        success: function (data) {
+            var data = JSON.parse(data);
+            var options;
+            for (var i = 0; i < data['length']; i++) {
+                if (dt == data[i]['id_merek']) {
+                  //  options += "<option value='" + data[i]['id_kategori'] + "' selected='selected'>" + data[i]['nama_kategori'] + " - Merek: " + data[i]['nama_merek'] + "</option>";
+                } else {
+                    options += "<option value='" + data[i]['id_kategori'] + "'>" + data[i]['nama_kategori'] + " - Merek : " + data[i]['nama_merek'] + "</option>";
+                }
+            }
+            $(element).append(options);
+            $('.selectpicker').selectpicker("refresh");
+        }
+    });
+}
+
 function select_role(base_url, element, dt) {
     $(element).empty();
     $.ajax({

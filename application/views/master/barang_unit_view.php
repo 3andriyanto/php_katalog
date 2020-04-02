@@ -18,25 +18,42 @@
                     <h3 class="box-title">Master Barang Unit {user_unit}</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
+
                     <button class="btn btn-sm btn-success" onclick="tambah()" style="margin-bottom: 10px;"><i class="glyphicon glyphicon-plus"></i> Tambah</button>
-                        <table id="table_barang_unit" class="display responsive table table-bordered table-hover" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Action</th>
-                                    <th>Gambar</th>
-                                    <th>Nama</th>
-                                    <th>Unit</th>
-                                    <th>Satuan</th>
-                                    <th>Merek</th>
-                                    <th>Kategori</th>
-                                    <th>Ukuran</th>
-                                    <th>Harga</th>
-                                    <th>Aktif</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                    <div  >      
+                        <div class="col-md-4">
+
+
+                        </div>
+                        <div class="col-md-4">
+
+
+                        </div>
+                        <div class="col-md-4" style="margin-bottom: 10px;">
+                            <span>Filter Kategori</span> :  <select id="kategoriFilter" name="kategoriFilter" class="form-control selectpicker" data-live-search="true">
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <table id="table_barang_unit" class="display responsive table table-bordered table-hover" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Gambar</th>
+                                <th>Nama</th>
+                                <th>Unit</th>
+                                <th>Satuan</th>
+                                <th>Merek</th>
+                                <th>Kategori</th>
+                                <th>Ukuran</th>
+                                <th>Harga</th>
+                                <th>Aktif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div><!-- /.col -->
@@ -159,13 +176,16 @@
 
 
 <script type="text/javascript">
-    
+
     var save_method;
     var table_barang_unit;
     var foto_barang_unit = 'no_image.png';
     var cari_barang;
 
     $(document).ready(function () {
+        
+        
+        
         $("#deskripsi").summernote({
             height: 350,
             minHeight: 150,
@@ -182,7 +202,10 @@
             responsive: true,
             ajax: {
                 url: "{base_url}master/barang_unit/ajaxlist",
-                type: "POST"
+                type: "POST",
+                "data": function (data) {
+                    data.id_kategori = $('#kategoriFilter').val();
+                },
             },
             columnDefs: [
                 {
@@ -210,17 +233,28 @@
                 {"sClass": "center"}
             ]
         });
-        
+
         //select_unit2('{base_url}', '#unit');
         select_kategori('{base_url}', '#kategori');
+        select_kategoriFilter('{base_url}', '#kategoriFilter');
+       
         $('.selectpicker').selectpicker({size: 10});
-        
+
     });
+
+    $('#kategoriFilter').change('click change', function (event) {
+        event.preventDefault();
+
+      table_barang_unit.draw();
+
+    });
+
+
 
     function reload_table() {
         table_barang_unit.ajax.reload(null, false);
     }
-    
+
     $('#modal_form').on('hide.bs.modal', function (e) {
         reload_table();
     });
@@ -321,7 +355,7 @@
                 foto_barang_unit = 'no_image.png';
             }
         }
-        
+
         $.ajax({
             url: url,
             type: "POST",
@@ -337,7 +371,7 @@
                 gambar: foto_barang_unit,
                 ukuran: $("input[name='ukuran']").val(),
                 aktif: $('#aktif').prop('checked') == true ? 1 : 0,
-                new: $('#aktif').prop('checked') == true ? 1 : 0,
+                new : $('#aktif').prop('checked') == true ? 1 : 0,
                 method: save_method
             },
             dataType: "JSON",
@@ -360,7 +394,7 @@
                             }
                         ]
                     });
-                    pesan.open();                    
+                    pesan.open();
                 }
             },
             error: function (jqXHR, textStatus, errorThrown)
@@ -390,7 +424,7 @@
                 $('[name="ukuran"]').val(data.ukuran);
                 data.new == 1 ? $('#new').bootstrapToggle('on') : $('#new').bootstrapToggle('off');
                 data.aktif == 1 ? $('#aktif').bootstrapToggle('on') : $('#aktif').bootstrapToggle('off');
-                
+
                 clearFileInput('gambar');
                 foto = data.gambar == '' ? 'no_image.png' : data.gambar;
                 image_url = '{base_url}asset/image/produk_unit/' + foto;
@@ -413,7 +447,7 @@
             }
         });
     }
-    
+
     function hapusGambar(gambar) {
         $success = false;
         if (gambar !== 'no_image.png') {
@@ -429,7 +463,7 @@
                 processData: false
             });
         }
-    }    
+    }
 
     function hapus(id) {
         BootstrapDialog.show({
@@ -448,7 +482,7 @@
                             dataType: "JSON",
                             success: function (data)
                             {
-                                if(data.success) {
+                                if (data.success) {
                                     reload_table();
                                     dialogItself.close();
                                 } else {
@@ -496,7 +530,7 @@
             dataType: "JSON",
             success: function (data)
             {
-                if(!data.success) {
+                if (!data.success) {
                     var pesan = new BootstrapDialog({
                         type: BootstrapDialog.TYPE_WARNING,
                         title: 'Error',
