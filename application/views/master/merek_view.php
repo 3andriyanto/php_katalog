@@ -56,7 +56,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3">Urut Posisi</label>
                                 <div class="col-md-9">
-                                    <input id="posisi" name="posisi" placeholder="Posisi" class="form-control" type="text">
+                                    <input id="posisi" name="posisi" placeholder="Posisi" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
