@@ -59,7 +59,7 @@ function select_kategoriFilter(base_url, element, filter, dt) {
                 if (dt == data[i]['id_merek']) {
                   //  options += "<option value='" + data[i]['id_kategori'] + "' selected='selected'>" + data[i]['nama_kategori'] + " - Merek: " + data[i]['nama_merek'] + "</option>";
                 } else {
-                    options += "<option value='" + data[i]['id_kategori'] + "'>" + data[i]['nama_kategori'] + " - Merek : " + data[i]['nama_merek'] + "</option>";
+                    options += "<option value='" + data[i]['id_kategori'] + "'>" + data[i]['nama_kategori'] + " - All - " + data[i]['nama_merek'] + "</option>";
                 }
             }
             $(element).append(options);
