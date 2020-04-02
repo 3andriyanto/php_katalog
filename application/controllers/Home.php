@@ -75,7 +75,10 @@ class Home extends CI_Controller {
         } elseif ($menuList == 'list_barang_unit') {
             $kode = "LIST_BARANG_UNIT";
             $view = 'master/list_barang_unit_view';
-        } elseif ($menuList == 'user') {
+        } elseif ($menuList == 'keranjang_belanja') {
+            $kode = "LIST_BARANG_UNIT";
+            $view = 'master/keranjang_belanja_view';
+        }elseif ($menuList == 'user') {
             $kode = "USER";
             $view = 'master/user_view';
         } elseif ($menuList == 'hak_akses') {

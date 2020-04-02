@@ -149,7 +149,6 @@
 
 <script type="text/javascript">
 
-
     var save_method;
     var table;
     var foto = 'no_image.png';

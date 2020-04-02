@@ -86,12 +86,14 @@ class MY_Controller extends CI_Controller {
 
                 foreach ($this->fields as $key => $value) {
                     if ($key == "action") {
-                      
                         
                         if ("LABEL" == array_search("actionAddTo", $value)) {
-                        $row[] = $this->actionAddTo($list[$this->pkField]);
-                        }else {
-                              $row[] = $this->action($list[$this->pkField]);
+                            $row[] = $this->actionAddTo($list[$this->pkField]);
+                        } else if ("LABEL" == array_search("actionCheck", $value)) {
+                            $row[] = $this->actionCheck($list[$this->pkField]);
+                        }
+                        else {
+                            $row[] = $this->action($list[$this->pkField]);
                         }
                     } 
                      
@@ -286,9 +288,12 @@ class MY_Controller extends CI_Controller {
                         <a class="btn btn-sm btn-danger" href="javascript:void(0);" title="Hapus" onclick="hapus(' . "'" . $id . "'" . ')"><i class="glyphicon glyphicon-trash"></i></a>';
     }
     
-     public function actionAddTo($id) {
-        //return '<a class="btn btn-sm btn-primary" href="javascript:void(0);" title="Add To Chart" onclick="edit(' . "'" . $id . "'" . ')"><i class="glyphicon glyphicon-shopping-cart"></i></a>';
+    public function actionAddTo($id) {
          return '<a class="btn btn-lg btn-success" href="javascript:void(0);" title="Add To Chart" onclick="edit(' . "'" . $id . "'" . ')"><i class="glyphicon glyphicon-shopping-cart"></i></a>';
+    }
+    
+    public function actionCheck($id) {
+         return '<input id="aktif" name="aktif" type="checkbox">';
     }
                         
 

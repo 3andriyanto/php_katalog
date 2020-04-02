@@ -151,7 +151,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="javascript:void(0)" onclick="showContent('list_barang_unit')"><i class="glyphicon glyphicon-th-list"></i> List Barang Unit</a></li>
-                                <li><a href="javascript:void(0)" onclick="showContent('shopping_chart')"><i class="glyphicon glyphicon-shopping-cart"></i> <span>Shopping Chart</span></a></li>
+                                <li><a href="javascript:void(0)" onclick="showContent('keranjang_belanja')"><i class="glyphicon glyphicon-shopping-cart"></i> <span>Keranjang Belanja</span></a></li>
                             </ul>
                         </li>
                         <hr>
