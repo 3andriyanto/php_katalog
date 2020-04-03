@@ -91,7 +91,7 @@
             serverSide: true,
             responsive: true,
             ajax: {
-                url: "{base_url}master/keranjang_belanja/ajax_list",
+                url: "{base_url}master/keranjang_belanja/ajaxlist",
                 type: "POST"
             },
             columnDefs: [

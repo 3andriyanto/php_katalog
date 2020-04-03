@@ -48,10 +48,49 @@ class Keranjang_belanja extends MY_Controller {
         if ($this->input->post("new") != "") {
             $filter["m_barang_unit.new"] = $this->input->post("new");
         }
-        $filter["m_barang_unit.id_unit"]  = $this->session->userdata('sess_id_unit');
+        $filter["keranjang_belanja.id_user"] = $this->session->userdata('sess_user_id');
         $this->ajax_list($filter);
     }
+
+    public function getIdKeranjang() {
+        $filter = array();
+        $idKeranjang = "aaa";
+        $filter["keranjang_belanja.id_user"] = $this->session->userdata('sess_user_id');
+        $filter["keranjang_belanja.id_barang_unit"] = $this->input->post('id_barang_unit');
+
+        if ($filter) {
+            foreach ($filter as $key => $value) {
+                if (strpos($key, ".")) {
+                    $filter[$key] = $value;
+                } else {
+                    $filter[$this->table . "." . $key] = $value;
+                }
+            }
+        }
+        $lists = $this->model->get_datatables($filter);
+     
+        
+        if($lists) {
+            foreach ($lists as $value) {
+                if ($value["id_keranjang_belanja"]){
+                     $result = array("success" => TRUE, "id_keranjang_belanja" => $value["id_keranjang_belanja"], "qty" => $value["qty"]);
+                    echo json_encode($result);
+                }
+                
+//                $idKeranjang = "999";
+        
+            }
+        
+    }else {
+            $result = array("success" => FALSE, "id_keranjang_belanja" => "-");
+          echo json_encode($result);
+    }
+
     
+   // echo json_encode($this->id_keranjang_belanja);
+    
+    }
+
     public function dialog() {
         $data = array(
             'base_url' => base_url(),
@@ -65,7 +104,7 @@ class Keranjang_belanja extends MY_Controller {
         );
         $this->parser->parse("master/barang_unit_dialog_view", $data);
     }
-    
+
     public function dataInput() {
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('', '');
@@ -79,11 +118,12 @@ class Keranjang_belanja extends MY_Controller {
         } else {
             $data = array();
             foreach ($this->input->post() as $key => $value) {
-                if($key == "method") {
-                } elseif($key == $this->pkField) {
+                if ($key == "method") {
+                    
+                } elseif ($key == $this->pkField) {
                     $data[$key] = !$value ? $this->uuid->v4() : $value;
                 } else {
-                    if(isset($value)) {
+                    if (isset($value)) {
                         $data[$key] = $value;
                     }
                 }
@@ -98,5 +138,4 @@ class Keranjang_belanja extends MY_Controller {
 //            return $this->is_unique("nama_unit", $str, __FUNCTION__, "Nama Unit");
 //        }
 //    }
-
 }

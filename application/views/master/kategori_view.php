@@ -123,6 +123,7 @@
                 },
                 {width: "50px", targets: 0}
             ],
+            
             aoColumns: [
                 {"sClass": "center"},
                 {"sClass": "left"},

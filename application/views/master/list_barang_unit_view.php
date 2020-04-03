@@ -72,7 +72,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="btnSave" onclick="simpan()" class="btn btn-lg btn-success">Add</button>
+                    <button type="button" id="btnSave" onclick="cekKeranjangBelanja()" class="btn btn-lg btn-success">Add</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -194,19 +194,51 @@
         });
     }
     
-    function simpan() {
+    
+    function cekKeranjangBelanja (){
         var url;
-        url = "{base_url}master/keranjang_belanja/add";
+        url = "{base_url}master/keranjang_belanja/getIdKeranjang";
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+                id_barang_unit: $("input[name='id_barang_unit']").val(),
+                method: save_method
+            },
+            dataType: "JSON",
+            success: function (response)
+            {   
+                console.info("response", response);
+                var id_keranjang_belanja = response.id_keranjang_belanja;
+                var qtyKeranjangBelanja = response.qty;
+                if (id_keranjang_belanja == "-"){
+                     simpan("add","",0);
+                }else {
+                    simpan("update",id_keranjang_belanja,qtyKeranjangBelanja);
+                }
+                
+              
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
+    }
+    
+    function simpan(statusMethod,id_keranjang_belanja,qtyKeranjangBelanja) {
+        var url;
+        url = "{base_url}master/keranjang_belanja/"+ statusMethod;
 
         $.ajax({
             url: url,
             type: "POST",
             data: {
-                id_keranjang_belanja: $("input[name='id_keranjang_belanja']").val(),
+                id_keranjang_belanja: id_keranjang_belanja,
                 id_user: $("input[name='id_user']").val(),
                 id_barang_unit: $("input[name='id_barang_unit']").val(),
-                qty: $("input[name='qty']").val(),
-                method: save_method
+                qty: parseInt($("input[name='qty']").val()) + parseInt(qtyKeranjangBelanja),
+                method: statusMethod
             },
             dataType: "JSON",
             success: function (data)
