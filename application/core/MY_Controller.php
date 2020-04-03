@@ -25,6 +25,7 @@ class MY_Controller extends CI_Controller {
     var $ubah = false;
     var $hapus = false;
     var $lihat = false;
+    var $id_keranjang_belanja = "";
 
     function __construct() {
         parent::__construct();
@@ -322,6 +323,7 @@ class MY_Controller extends CI_Controller {
         $this->tambah = false;
         $this->ubah = false;
         $this->hapus = false;
+        $this->id_keranjang_belanja = "";
     }
 
 }
