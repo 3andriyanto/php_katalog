@@ -10,6 +10,7 @@ class M_keranjang_belanja_model extends MY_Model {
           "keranjang_belanja.id_user",
           "m_users.nama_user",
           "keranjang_belanja.id_barang_unit",
+          "keranjang_belanja.aktif",
           "m_barang_unit.nama_barang_unit",
           "m_barang_unit.gambar",
           "m_barang_unit.harga",

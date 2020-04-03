@@ -22,7 +22,9 @@ class Keranjang_belanja extends MY_Controller {
         //pair key value (field => TYPE)
         //TYPE: EMAIL/STRING/INT/FLOAT/BOOLEAN/DATE/PASSWORD/URL/IP/MAC/RAW/DATA
         $this->fields = array(
-            "action" => array("TIPE" => "TRANSACTION", "LABEL" => "actionCheck"),
+            //"action" => array("TIPE" => "BOOLEAN", "LABEL" => "actionCheck", "CUSTOM"=>TRUE),
+            //"action" => array("TIPE" => "TRANSACTION", "LABEL" => "Action"),
+            "aktif" => array("TIPE" => "BOOLEAN", "LABEL" => "Aktif", "CUSTOM"),
             "gambar" => array("TIPE" => "IMAGE", "LABEL" => "Gambar", "LOKASI" => "asset/image/produk_unit/thumb/"),
             "nama_barang_unit" => array("TIPE" => "STRING", "LABEL" => "Nama Barang"),
             "harga" => array("TIPE" => "DOUBLE", "LABEL" => "Harga"),

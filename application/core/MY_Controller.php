@@ -138,7 +138,7 @@ class MY_Controller extends CI_Controller {
         }
         echo json_encode($output);
     }
-
+    
     public function get() {
         $cari = NULL;
         $kondisi = array();

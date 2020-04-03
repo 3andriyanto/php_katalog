@@ -184,8 +184,6 @@
 
     $(document).ready(function () {
         
-        
-        
         $("#deskripsi").summernote({
             height: 350,
             minHeight: 150,

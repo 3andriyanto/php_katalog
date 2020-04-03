@@ -200,6 +200,16 @@ class MY_Model extends CI_Model {
         return $query->result_array();
     }
 
+    function get_aktif($filter = array()) {
+        $this->_get_aktif_query($filter);
+        if ($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+        
+        $this->db->where($this->aktif, 1);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
     public function get_by_id($id) {
         $select = $this->primaryKey;
         if (!empty($this->fields)) {

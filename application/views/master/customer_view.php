@@ -62,6 +62,7 @@
                                 <label class="control-label col-md-3">Unit</label>
                                 <div class="col-md-9">
                                     <select id="unit" name="unit" class="form-control selectpicker" data-live-search="true" data-container="#modal_form">
+                                        <option value={user_id_unit}>{user_unit}</option>
                                     </select>
                                 </div>
                             </div>
@@ -145,7 +146,7 @@
             ]
         });
         $('.selectpicker').selectpicker({size: 10});
-        select_unit2('{base_url}', '#unit');
+        //select_unit2('{base_url}', '#unit');
     });
     
     function reload_table() {
