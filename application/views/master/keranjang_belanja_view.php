@@ -58,10 +58,9 @@
                         <table id="list_order" class="display responsive table table-bordered table-hover" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
+                                    <th>Gambar</th>
                                     <th>Nama</th>
-                                    <th>Qty</th>
                                     <th>Harga</th>
-                                    <th>Jumlah</th>
                                 </tr>
                             </thead>
                         </table>
@@ -127,7 +126,10 @@
             info: false,
             ajax: {
                 url: "{base_url}master/keranjang_belanja/ajaxlist",
-                type: "POST"
+                type: "POST",
+                 "data": function (data) {
+                    data.aktif = 1
+                }
             },
             columnDefs: [
                 {
@@ -138,7 +140,6 @@
                 {width: "50px", targets: 0}
             ],
             aoColumns: [
-                {"sClass": "left"},
                 {"sClass": "right"},
                 {"sClass": "right"},
                 {"sClass": "right"}
@@ -151,14 +152,19 @@
         list_keranjang_belanja.ajax.reload(null, false);
     }
     
+     function reload_table_list_order() {
+        list_order.ajax.reload(null, false);
+    }
+    
     $('#modal_form').on('hide.bs.modal', function (e) {
-        reload_table();
+        reload_table_list_order();
     });
 
     function tambah() {
         //save_method = 'add';
         //$('#form')[0].reset();
         $('#modal_form').modal('show');
+        reload_table_list_order();
         //$('.modal-title').text('XXXX');
     }
 

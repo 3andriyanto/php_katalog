@@ -30,6 +30,7 @@ class Keranjang_belanja extends MY_Controller {
             "nama_barang_unit" => array("TIPE" => "STRING", "LABEL" => "Nama Barang"),
             "harga" => array("TIPE" => "DOUBLE", "LABEL" => "Harga"),
             "qty" => array("TIPE" => "INT", "LABEL" => "Qty")
+            
         );
 
         $this->model->fieldsView = $this->fields;
@@ -48,6 +49,9 @@ class Keranjang_belanja extends MY_Controller {
         }
         if ($this->input->post("new") != "") {
             $filter["m_barang_unit.new"] = $this->input->post("new");
+        }
+        if ($this->input->post("aktif")) {
+            $filter["keranjang_belanja.aktif"] = $this->input->post("aktif");
         }
         $filter["keranjang_belanja.id_user"] = $this->session->userdata('sess_user_id');
         $this->ajax_list($filter);
