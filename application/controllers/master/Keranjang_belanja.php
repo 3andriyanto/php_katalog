@@ -24,6 +24,7 @@ class Keranjang_belanja extends MY_Controller {
         $this->fields = array(
             //"action" => array("TIPE" => "BOOLEAN", "LABEL" => "actionCheck", "CUSTOM"=>TRUE),
             //"action" => array("TIPE" => "TRANSACTION", "LABEL" => "Action"),
+            //"tanggal" => array("TIPE" => "DATETIME", "LABEL" => "Tanggal"),
             "aktif" => array("TIPE" => "BOOLEAN", "LABEL" => "Aktif", "CUSTOM"),
             "gambar" => array("TIPE" => "IMAGE", "LABEL" => "Gambar", "LOKASI" => "asset/image/produk_unit/thumb/"),
             "nama_barang_unit" => array("TIPE" => "STRING", "LABEL" => "Nama Barang"),

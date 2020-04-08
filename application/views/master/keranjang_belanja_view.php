@@ -61,6 +61,7 @@
                                     <th>Nama</th>
                                     <th>Qty</th>
                                     <th>Harga</th>
+                                    <th>Jumlah</th>
                                 </tr>
                             </thead>
                         </table>
@@ -125,7 +126,7 @@
             paging: false, 
             info: false,
             ajax: {
-                url: "{base_url}master/keranjang_belanja/ajax_list",
+                url: "{base_url}master/keranjang_belanja/ajaxlist",
                 type: "POST"
             },
             columnDefs: [
@@ -137,8 +138,8 @@
                 {width: "50px", targets: 0}
             ],
             aoColumns: [
-                
                 {"sClass": "left"},
+                {"sClass": "right"},
                 {"sClass": "right"},
                 {"sClass": "right"}
             ]

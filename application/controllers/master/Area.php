@@ -46,7 +46,8 @@ class Area extends MY_Controller {
             $data = array();
             foreach ($this->input->post() as $key => $value) {
                 if($key == "method") {
-                } elseif($key == $this->pkField) {
+                }  
+                elseif($key == $this->pkField) {
                     $data[$key] = !$value ? $this->uuid->v4() : $value;
                 } else {
                     if(isset($value)) {
