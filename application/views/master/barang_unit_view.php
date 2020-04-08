@@ -203,7 +203,7 @@
                 type: "POST",
                 "data": function (data) {
                     data.id_kategori = $('#kategoriFilter').val();
-                },
+                }
             },
             columnDefs: [
                 {
