@@ -180,7 +180,7 @@ class MY_Model extends CI_Model {
                     }
                 }
             } else {
-                $this->db->order_by($orderFieldsView[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+               // $this->db->order_by($orderFieldsView[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
             }
         } else {
             if (!empty($this->orderBy)) {

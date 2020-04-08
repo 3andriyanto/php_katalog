@@ -30,6 +30,7 @@ class Keranjang_belanja extends MY_Controller {
             "nama_barang_unit" => array("TIPE" => "STRING", "LABEL" => "Nama Barang"),
             "harga" => array("TIPE" => "DOUBLE", "LABEL" => "Harga"),
             "qty" => array("TIPE" => "INT", "LABEL" => "Qty")
+            
         );
 
         $this->model->fieldsView = $this->fields;
