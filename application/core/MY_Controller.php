@@ -109,13 +109,27 @@ class MY_Controller extends CI_Controller {
                     } elseif ("TIPE" == array_search("BOOLEAN", $value)) {
                         $custom = isset($value["CUSTOM"]) ? $value["CUSTOM"] : FALSE;
                         if ($custom) {
-                            $row[] = $this->customList($key, $list[$key], $list[$this->pkField]);
+                            
+                            if ("LABEL" == array_search("AktifAndHapus", $value)){
+                                $row[] = $this->customKeranjangList($key, $list[$key], $list[$this->pkField]);
+                            }else {
+                                $row[] = $this->customList($key, $list[$key], $list[$this->pkField]);
+                            }
+                            
+                            
                         } else {
                             $row[] = $this->aktifList($list[$key], $list[$this->pkField]);
                         }
                     } elseif ("TIPE" == array_search("FLOAT", $value)) {
                         $row[] = number_format($list[$key], 0, '.', ',');
-                    } elseif ("TIPE" == array_search("DETAIL", $value)) {
+                    }
+                    elseif ("TIPE" == array_search("INT", $value)) {
+                         $custom = isset($value["CUSTOM"]) ? $value["CUSTOM"] : FALSE;
+                        if ($custom) {
+                            $row[] = $this->customTextfieldKeranjangList($key, $list[$key], $list[$this->pkField]);
+                        }
+                    }
+                    elseif ("TIPE" == array_search("DETAIL", $value)) {
                         $model = isset($value["MODEL"]) ? $value["MODEL"] : "";
                         $table = isset($value["TABLE"]) ? $value["TABLE"] : "";
                         $kondisi[$table . "." . $this->pkField] = $list[$this->pkField];
@@ -247,6 +261,28 @@ class MY_Controller extends CI_Controller {
         }
         echo json_encode($result);
     }
+    
+        public function qty() {
+        $this->get_hak_akses($this->kode_transaksi);
+        if(!$this->ubah) {
+            $result = array("msg" => "Anda tidak berhak merubah data.");
+        } else {
+            $result = array();
+            $data["qty"] = $this->input->post("qty");
+            if ($data) {
+                $update = $this->model->update($this->input->post($this->pkField), $data);
+                if ($update) {
+                    $result = array("success" => TRUE);
+                } else {
+                    $result = array("msg" => "Gagal diupdate.");
+                }
+            } else {
+                $result = array("msg" => $data["error"]);
+            }
+        }
+        echo json_encode($result);
+    }
+    
 
     public function active() {
         $this->get_hak_akses($this->kode_transaksi);
@@ -305,6 +341,14 @@ class MY_Controller extends CI_Controller {
     public function customList($pre, $value, $id) {
         return $value == 1 ? '<input id="' . $pre . $id . '" class="aktif" type="checkbox" checked data-toggle="toggle" data-on="Ya" data-off="Tidak" data-size="small" onclick="edit_list(' . "'" . $pre . "'" . ', ' . "'" . $id . "'" . ')">' : '<input id="' . $pre . $id . '" class="aktif" type="checkbox" data-toggle="toggle" data-on="Ya" data-off="Tidak" data-size="small" onclick="edit_list(' . "'" . $pre . "'" . ', ' . "'" . $id . "'" . ')">';
     }
+    
+    public function customKeranjangList($pre, $value, $id) {
+        return $value == 1 ? '<input id="' . $id . '" class="aktif" type="checkbox" checked data-toggle="toggle" data-on="Ya" data-off="Tidak" data-size="small" onclick="edit_aktif(' . "'" . $id . "'" . ')"><a class="btn btn-lg" href="javascript:void(0);" title="Hapus" onclick="hapus(' . "'" . $id . "'" . ')"><i class="glyphicon glyphicon-remove"></i></a>' : '<input id="' . $id . '" class="aktif" type="checkbox" data-toggle="toggle" data-on="Ya" data-off="Tidak" data-size="small" onclick="edit_aktif(' . "'" . $id . "'" . ')"><a class="btn btn-lg" href="javascript:void(0);" title="Hapus" onclick="hapus(' . "'" . $id . "'" . ')"><i class="glyphicon glyphicon-remove"></i></a>';
+  }
+   
+  public function customTextfieldKeranjangList($pre, $value, $id) {
+            return '<input id="' . $id . '-qty" onchange="edit_qty(' . "'" . $id . "'" . ')"  name="qty" class="form-control" type="number" min="1" value="'.  $value .'">';
+      }
 
     public function unsetAll() {
         $this->model;

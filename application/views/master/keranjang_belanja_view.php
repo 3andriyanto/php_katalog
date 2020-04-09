@@ -67,7 +67,7 @@
                 </div><!-- /.box-body -->
                 
                 <div class="modal-footer">
-                    <button type="button" id="btnSave" onclick="simpan()" class="btn btn-lg btn-success">Add</button>
+                    <button type="button" id="btnSave" onclick="simpan()" class="btn btn-lg btn-success">Order</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -178,6 +178,93 @@
             success: function (data)
             {
                 if(!data.success) {
+                    var pesan = new BootstrapDialog({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Error',
+                        message: '<font color="red">' + data.msg + '</font>',
+                        buttons: [
+                            {
+                                label: 'Tutup',
+                                action: function (dialogRef) {
+                                    dialogRef.close();
+                                }
+                            }
+                        ]
+                    });
+                    pesan.open();
+                }
+                reload_table();
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(errorThrown);
+            }
+        });
+    }
+    
+     function hapus(id) {
+        BootstrapDialog.show({
+            type: BootstrapDialog.TYPE_DANGER,
+            title: 'Hapus',
+            message: 'Yakin ingin menghapus data ini?',
+            buttons: [{
+                    icon: 'glyphicon glyphicon-ban-circle',
+                    label: 'Hapus',
+                    cssClass: 'btn-warning',
+                    action: function (dialogItself) {
+                        $.ajax({
+                            url: "{base_url}master/keranjang_belanja/delete/" + id,
+                            type: "POST",
+                            dataType: "JSON",
+                            success: function (data)
+                            {
+                                if (data.success) {
+                                    reload_table();
+                                    dialogItself.close();
+                                } else {
+                                    var pesan = new BootstrapDialog({
+                                        type: BootstrapDialog.TYPE_WARNING,
+                                        title: 'Error',
+                                        message: '<font color="red">' + data.msg + '</font>',
+                                        buttons: [
+                                            {
+                                                label: 'Tutup',
+                                                action: function (dialogRef) {
+                                                    dialogRef.close();
+                                                }
+                                            }
+                                        ]
+                                    });
+                                    pesan.open();
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown)
+                            {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                }, {
+                    label: 'Batal',
+                    action: function (dialogItself) {
+                        dialogItself.close();
+                    }
+                }]
+        });
+    }
+    
+    
+    
+    function edit_qty(id) {
+       var  qty = $("input[name='qty']").val();
+        $.ajax({
+            url: "{base_url}master/keranjang_belanja/qty",
+            type: "POST",
+            data: {id_keranjang_belanja: id, qty: qty},
+            dataType: "JSON",
+            success: function (data)
+            {
+                if (!data.success) {
                     var pesan = new BootstrapDialog({
                         type: BootstrapDialog.TYPE_WARNING,
                         title: 'Error',
