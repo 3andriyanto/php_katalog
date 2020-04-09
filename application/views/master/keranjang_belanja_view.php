@@ -48,7 +48,7 @@
                 <div class="box-body">
                     <label class="control-label col-sm-3">Customer</label>
                     <div class="col-sm-9">
-                        <select id="customer" name="customer" class="form-control selectpicker" data-live-search="true">
+                        <select id="customer2" name="customer2" class="form-control selectpicker" data-live-search="true">
                         </select>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
             ]
         });
         
-        select_filter_customer('{base_url}', '#customer');
+        select_customer2('{base_url}', '#customer2','{user_id_unit}');
         //select_customer('{base_url}', '#customer');
         
         // LIST ORDER

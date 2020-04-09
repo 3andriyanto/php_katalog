@@ -252,13 +252,13 @@ function select_customer(base_url, element, filter, dt) {
     });
 }
 
-function select_filter_customer(base_url, element, filter, dt) {
-    //id_customer = (filter == null || filter == '') ? {} : {id_customer: filter};
+function select_customer2(base_url, element, filter, dt) {
+ id_unit = (filter == null || filter == '') ? {} : {id_unit: filter};
     $(element).empty();
     $.ajax({
         url: base_url + "master/customer/get",
-        type: 'GET',
-        data: {id_unit: '43998776-7b1f-4573-b319-39915f93f96e'},
+        type: 'POST',
+        data: id_unit,
         datatype: 'json',
         success: function (data) {
             var data = JSON.parse(data);
