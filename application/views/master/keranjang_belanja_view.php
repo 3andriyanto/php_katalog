@@ -112,7 +112,8 @@
             ]
         });
         
-        select_customer('{base_url}', '#customer');
+        select_filter_customer('{base_url}', '#customer');
+        //select_customer('{base_url}', '#customer');
         
         // LIST ORDER
         list_order = $('#list_order').DataTable({
@@ -161,8 +162,7 @@
     });
 
     function tambah() {
-        //save_method = 'add';
-        //$('#form')[0].reset();
+
         $('#modal_form').modal('show');
         reload_table_list_order();
         //$('.modal-title').text('XXXX');

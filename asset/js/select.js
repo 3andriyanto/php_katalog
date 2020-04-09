@@ -252,6 +252,30 @@ function select_customer(base_url, element, filter, dt) {
     });
 }
 
+function select_filter_customer(base_url, element, filter, dt) {
+    //id_customer = (filter == null || filter == '') ? {} : {id_customer: filter};
+    $(element).empty();
+    $.ajax({
+        url: base_url + "master/customer/get",
+        type: 'GET',
+        data: {id_unit: '43998776-7b1f-4573-b319-39915f93f96e'},
+        datatype: 'json',
+        success: function (data) {
+            var data = JSON.parse(data);
+            var options;
+            for (var i = 0; i < data['length']; i++) {
+                if (dt == data[i]['id_customer']) {
+                    options += "<option value='" + data[i]['id_customer'] + "' selected='selected'>" + data[i]['nama_customer'] + "</option>";
+                } else {
+                    options += "<option value='" + data[i]['id_customer'] + "'>" + data[i]['nama_customer'] + "</option>";
+                }
+            }
+            $(element).append(options);
+            $('.selectpicker').selectpicker("refresh");
+        }
+    });
+}
+
 function select_barang(base_url, element, unit) {
     $(element).empty();
 
